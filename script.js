@@ -55,9 +55,9 @@ function createCactus() {
             //Game over
             clearInterval(leftInterval);
             background.removeChild(cactus);
-            document.querySelector(".box").style.display = 'block';  
-            document.querySelector(".text").innerHTML = 'Game Over </br> Score: ' + scoreGame;      
-            stopGame = true;
+           // document.querySelector(".box").style.display = 'block';  
+           // document.querySelector(".text").innerHTML = 'Game Over </br> Score: ' + scoreGame;      
+            //stopGame = true;
         } else {
             cactusPosition -= 10;
             cactus.style.left = cactusPosition + 'px';

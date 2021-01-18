@@ -9,7 +9,9 @@ body {
 .dino {
     width: 60px;
     height: 60px;
-    background-image: url(https://github.com/celso-henrique/dio-dino-game/blob/master/dino.png?raw=true);
+    background-image: url('sprites/dino-aniversary.gif');
+    background-size: 100%;
+    /*background-image: url(https://github.com/celso-henrique/dio-dino-game/blob/master/dino.png?raw=true);*/
     position: absolute;
     bottom: 0;
 }
