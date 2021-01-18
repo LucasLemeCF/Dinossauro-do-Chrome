@@ -9,7 +9,7 @@ body {
 .dino {
     width: 60px;
     height: 60px;
-    background-image: url(img/dino.png);
+    background-image: url(https://github.com/celso-henrique/dio-dino-game/blob/master/dino.png?raw=true);
     position: absolute;
     bottom: 0;
 }
@@ -19,7 +19,7 @@ body {
     width: 60px;
     height: 60px;
     bottom: 0;
-    background-image: url(img/cactus.png);
+    background-image: url(https://github.com/celso-henrique/dio-dino-game/blob/master/cactus.png?raw=true);
 }
 
 @keyframes slideright {
@@ -34,7 +34,7 @@ body {
 .background {
     position: absolute;
     bottom: 0px;
-    background-image: url('img/background.png');
+    background-image: url(https://github.com/celso-henrique/dio-dino-game/blob/master/background.png?raw=true);
     background-repeat: repeat-x;
     animation: slideright 600s infinite linear;
     width: 100%;
@@ -80,7 +80,7 @@ button {
     margin-top: 10px;
     width: 50px;
     height: 50px;
-    background-image: url('img/reload.png');
+    background-image: url(https://www.freeiconspng.com/thumbs/reload-icon/arrow-refresh-reload-icon-29.png);
     border-radius: 5px;
     background-size: 100%;
     cursor: pointer;
