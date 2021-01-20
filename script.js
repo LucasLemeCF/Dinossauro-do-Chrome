@@ -109,7 +109,7 @@ function mostrarSobre() {
     document.querySelector("#escolherDino").style.display = 'none';  
     document.querySelector("#sobre").style.display = 'none';  
     document.querySelector("#linkedIn").style.display = 'block';  
-    document.querySelector("#sprites").style.display = 'block';  
+    document.querySelector("#gitHub").style.display = 'block';  
     document.querySelector("#voltar").style.display = 'block';  
 }
 
