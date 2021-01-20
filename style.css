@@ -1,5 +1,7 @@
 html {
     overflow-x:hidden;
+    font-family: 'VT323', monospace;
+    font-weight: bold;
 }
 
 body {
@@ -9,9 +11,8 @@ body {
 .dino {
     width: 60px;
     height: 60px;
-    background-image: url('sprites/dino-aniversary.gif');
+    background-image: url('sprites/dino-rainbow.gif');
     background-size: 100%;
-    /*background-image: url(https://github.com/celso-henrique/dio-dino-game/blob/master/dino.png?raw=true);*/
     position: absolute;
     bottom: 0;
 }
@@ -33,26 +34,36 @@ body {
     }
 }
 
-.background {
+#background {
     position: absolute;
     bottom: 0px;
-    background-image: url(https://github.com/celso-henrique/dio-dino-game/blob/master/background.png?raw=true);
+    background-image: url(https://raw.githubusercontent.com/celso-henrique/dio-dino-game/master/background.png);
     background-repeat: repeat-x;
     animation: slideright 600s infinite linear;
     width: 100%;
     height: 200px;
 }
 
-.box {
+#gameOver {
     display: none;
+    font-size: 32px;
+    margin-top: 25px;
     text-align: center;
-    width: 100%;
-    height: 100%;
-    background: #fafafa;
-    position:absolute;
+    cursor: default;
 }
 
-.gameOver {
+#reiniciar {
+    display: none;
+    margin-top: 20px;
+    margin-left: 17px;
+}
+
+
+.pontuacao {
+    font-size: 30px;
+}
+
+.menu {
     left: 50%;
     top: 50%;
     margin-left: -200px; 
@@ -60,31 +71,42 @@ body {
     position: absolute;
     width: 300px; 
     height: 200px;
-    background-color:black;
-    border-radius: 15px;
-}
-
-.text {
-    font-size: 30px;
-    margin-top: 40px;
-    text-align: center;
-    color: white;
-    margin-top: 50px 0;
-    font-family: arial;
-    cursor: default;
-}
-
-.score {
-    font-size: 30px;
-}
-
-button {
-    margin-top: 10px;
-    width: 50px;
-    height: 50px;
-    background-image: url(https://www.freeiconspng.com/thumbs/reload-icon/arrow-refresh-reload-icon-29.png);
+    border: solid black;
     border-radius: 5px;
-    background-size: 100%;
-    cursor: pointer;
-    border: none;
+    border-style: double;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    display: hidden;
+}
+
+.button {
+    width: 260px;
+    height: 40px;
+    border: solid black;
+    border-style: double;
+    text-align: center;
+    font-size: 25px;
+    cursor:pointer;
+}
+
+.button :hover {
+    width: 260px;
+    height: 37px;
+    margin-top: 2px;
+    background-color: rgb(236, 235, 235);
+}
+
+p {
+    margin: 0;
+    margin-top: 5px;
+}
+
+#removeCactus {
+    width: 100%;
+    height: 150px;
+    background-color: #fafafa;;
+    position: absolute;
+    bottom: 0px;
 }

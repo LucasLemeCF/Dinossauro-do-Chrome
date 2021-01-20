@@ -4,18 +4,30 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dinossauro do Chrome</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+     
         <link rel="stylesheet" href="style.css">
         <script src="script.js" charset="UTF-8" defer></script>
     </head>
     <body>
-        <div class="background">
+        <div id="background">
             <div class="dino"></div>    
         </div>
 
-        <div class="box">
-            <div class="gameOver"><div class="text"></div><button onclick="reload()"></button></div></div>
-        </div> 
+        <div class="menu">
+            <div id="gameOver"></div>
+            <div class="button" id="jogar" onclick="jogar()"><p>Jogar</p></div>
+            <div class="button" id="escolherDino" onclick="escolherDino()"><p>Escolher Dino</p></div>
+            <div class="button" id="sobre" onclick="mostrarSobre()"><p>Sobre</p></div>
+            <div class="button" id="reiniciar" onclick="reiniciar()" ><p>Voltar ao menu</p></div>
 
-        <div class="score"></div>
+            <!-- Sobre -->
+            <div class="button" id="linkedIn" onclick="javascript:location.href='https://github.com/LucasLemeCF/Dinossauro-do-Chrome'" style="display: none;"><p>linkedIn</p></div>
+            <div class="button" id="sprites" onclick="javascript:location.href='https://www.piskelapp.com/user/6465056331530240'" style="display: none;"><p>Sprites</p></div>
+            <div class="button" id="voltar" onclick="reiniciar()" style="display: none;"><p>Voltar</p></div>
+        </div>
+
+        <div id="removeCactus" style="display: none;"></div>
+        <div class="pontuacao"></div>
     </body>
 </html>

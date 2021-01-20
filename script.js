@@ -1,9 +1,9 @@
-const dino = document.querySelector('.dino');
-const background = document.querySelector('.background');
+var dino = document.querySelector('.dino');
+const background = document.querySelector('#background');
 let isJumping = false;
 let position = 0;
 stopGame = false;
-scoreGame = 0;
+pontos = 0;
 
 function handKeyUp(event) {
     if (event.keyCode === 32) {
@@ -26,13 +26,13 @@ function jump() {
                     clearInterval(downInterval);
                     isJumping = false;
                 } else {
-                    position -= 20;
+                    position -= 13;
                     dino.style.bottom = position + 'px';
                 } 
             }, 20);
         } else {
             //Subindo
-            position += 20;
+            position += 13;
             dino.style.bottom = position + 'px';
         }
     }, 20);
@@ -48,38 +48,70 @@ function createCactus() {
     background.appendChild(cactus);
 
     let leftInterval = setInterval(() => {
-        if (cactusPosition < -60) {
+        if (cactusPosition < -70) {
             clearInterval(leftInterval);
             background.removeChild(cactus);
-        } else if (cactusPosition > 0 && cactusPosition < 60 && position < 60) {
+        } else if (cactusPosition > 0 && cactusPosition < 70 && position < 70) {
             //Game over
             clearInterval(leftInterval);
             background.removeChild(cactus);
-           // document.querySelector(".box").style.display = 'block';  
-           // document.querySelector(".text").innerHTML = 'Game Over </br> Score: ' + scoreGame;      
-            //stopGame = true;
+            stopGame = true;
+            dino.classList.remove("dino");
+            document.querySelector(".pontuacao").style.display = 'none';  
+            document.querySelector("#gameOver").style.display = 'block';  
+            document.querySelector("#gameOver").innerHTML = 'Game Over </br> Pontruação: ' + pontos; 
+            gameOver();
         } else {
             cactusPosition -= 10;
             cactus.style.left = cactusPosition + 'px';
         }
     }, 20);
 
-    setTimeout(createCactus, randomTime)
+    if (stopGame == false) {
+        setTimeout(createCactus, randomTime);
+    }
 }
 
-function score() { 
+function pontuacao() { 
     let pontosInterval = setInterval(() => {
         if (!stopGame) {
-            scoreGame += 1;
+            pontos += 1;
         }
-        document.querySelector(".score").innerHTML = "Score: " + scoreGame;
-    }, 100);
+        document.querySelector(".pontuacao").innerHTML = "Pontuação: " + pontos;
+    }, 250);
 }
 
-function reload() {
+function reiniciar() {
     document.location.reload(true);
 }
 
-score();
-createCactus();
+function jogar() {
+    document.querySelector(".menu").style.display = 'none';
+    createCactus();
+    pontuacao();
+}
+
+function gameOver() {
+    document.querySelector("#jogar").style.display = 'none';  
+    document.querySelector("#escolherDino").style.display = 'none';  
+    document.querySelector("#sobre").style.display = 'none';  
+    document.querySelector("#reiniciar").style.display = 'block';  
+    document.querySelector(".menu").style.display = 'block';  
+    document.querySelector("#removeCactus").style.display = 'block';  
+}
+
+function escolherDino() {
+
+}
+
+function mostrarSobre() {
+    document.querySelector("#jogar").style.display = 'none';  
+    document.querySelector("#escolherDino").style.display = 'none';  
+    document.querySelector("#sobre").style.display = 'none';  
+    document.querySelector("#linkedIn").style.display = 'block';  
+    document.querySelector("#sprites").style.display = 'block';  
+    document.querySelector("#voltar").style.display = 'block';  
+}
+
+document.querySelector(".pontuacao").innerHTML = "Pontuação: 0";
 document.addEventListener('keyup', handKeyUp);
