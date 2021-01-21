@@ -88,7 +88,7 @@ function jogar() {
 function gameOver() {
     document.querySelector(".pontuacao").style.display = 'none';  
     document.querySelector("#gameOver").style.display = 'block';  
-    document.querySelector("#gameOver").innerHTML = 'Game Over </br> Pontruação: ' + pontos; 
+    document.querySelector("#gameOver").innerHTML = 'Game Over </br> Pontuação: ' + pontos; 
     document.querySelector("#jogar").style.display = 'none';  
     document.querySelector("#mostrarDinos").style.display = 'none';  
     document.querySelector("#sobre").style.display = 'none';  
