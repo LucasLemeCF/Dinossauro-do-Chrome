@@ -10,24 +10,47 @@
         <script src="script.js" charset="UTF-8" defer></script>
     </head>
     <body>
-        <div id="background">
-            <div class="dino"></div>    
+        <div id="game">
+            <div class="pontuacao"></div>
+
+            <div id="background">
+                <div class="dino"></div>    
+            </div>
+
+            <div class="menu" style="display: flex;">
+                <div class="button" id="jogar" onclick="jogar()"><p>Jogar</p></div>
+                <div class="button" id="mostrarDinos" onclick="mostrarDinos()"><p>Escolher Dino</p></div>
+                <div class="button" id="sobre" onclick="mostrarSobre()"><p>Sobre</p></div>
+                <div class="button" id="reiniciar" onclick="reiniciar()" style="display: none;" ><p>Voltar ao menu</p></div>
+
+                <!-- Sobre -->
+                <div class="button" id="linkedIn" onclick="javascript:location.href='https://www.linkedin.com/in/lucas-leme/'" style="display: none;"><p>linkedIn</p></div>
+                <div class="button" id="gitHub" onclick="javascript:location.href='https://github.com/LucasLemeCF/Dinossauro-do-Chrome'" style="display: none;"><p>gitHub</p></div>
+                <div class="button voltar" onclick="voltar()" style="display: none;"><p>Voltar</p></div>
+
+                <!-- Game Over -->
+                <div id="gameOver" style="display: none;"></div>
+                <div class="animation" style="background-image: url('sprites/dino-animation.gif'); display: none;"></div>
+                <div class="button atualizar" onclick="atualizar()" style="display: none;"><p id="p-gameOver">Jogar Novamente</p></div>
+            </div>
+
+            <div class="menu-dino" style="display: none;">
+                
+                <div class="opcao-dino" id="basic" style="background-image: url('sprites/dino-basic.gif');" onclick="escolherDino(this, id)" ></div>
+                <div class="opcao-dino" id="aniversary" style="background-image: url('sprites/dino-aniversary.gif');" onclick="escolherDino(this, id)"></div>
+                <div class="opcao-dino" id="red" style="background-image: url('sprites/dino-red.gif');" onclick="escolherDino(this, id)" ></div>
+                <div class="opcao-dino" id="pink" style="background-image: url('sprites/dino-pink.gif');" onclick="escolherDino(this, id)"></div>
+                
+                <div class="opcao-dino" id="yellow" style="background-image: url('sprites/dino-yellow.gif');" onclick="escolherDino(this, id)"></div>
+                <div class="opcao-dino" id="green" style="background-image: url('sprites/dino-green.gif');" onclick="escolherDino(this, id)" ></div>
+                <div class="opcao-dino" id="cyan" style="background-image: url('sprites/dino-cyan.gif');" onclick="escolherDino(this, id)"></div>
+                <div class="opcao-dino" id="blue" style="background-image: url('sprites/dino-blue.gif');" onclick="escolherDino(this, id)" ></div>     
+                
+                <div class="opcao-dino" id="rainbow" style="background-image: url('sprites/dino-rainbow.gif');" onclick="escolherDino(this, id)" ></div>
+                <div class="button voltar" onclick="voltar()" style="display: block;"><p>Voltar</p></div>
+            </div>
+
+            <div id="removeCactus" style="display: none;"></div>
         </div>
-
-        <div class="menu">
-            <div id="gameOver"></div>
-            <div class="button" id="jogar" onclick="jogar()"><p>Jogar</p></div>
-            <div class="button" id="escolherDino" onclick="escolherDino()"><p>Escolher Dino</p></div>
-            <div class="button" id="sobre" onclick="mostrarSobre()"><p>Sobre</p></div>
-            <div class="button" id="reiniciar" onclick="reiniciar()" ><p>Voltar ao menu</p></div>
-
-            <!-- Sobre -->
-            <div class="button" id="linkedIn" onclick="javascript:location.href='https://www.linkedin.com/in/lucas-leme/'" style="display: none;"><p>linkedIn</p></div>
-            <div class="button" id="gitHub" onclick="javascript:location.href='https://github.com/LucasLemeCF/Dinossauro-do-Chrome'" style="display: none;"><p>gitHub</p></div>
-            <div class="button" id="voltar" onclick="reiniciar()" style="display: none;"><p>Voltar</p></div>
-        </div>
-
-        <div id="removeCactus" style="display: none;"></div>
-        <div class="pontuacao"></div>
     </body>
 </html>

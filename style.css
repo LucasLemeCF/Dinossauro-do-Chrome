@@ -8,10 +8,28 @@ body {
     background: #fafafa;
 }
 
+#game {
+    width: 1000px;
+    height: 500px;
+    border: solid black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -500px; 
+    margin-top: -300px; 
+    background: #fafafa;
+}
+
+.pontuacao {
+    font-size: 30px;
+    margin-left: 5px;
+}
+
 .dino {
+    margin-top: 140px;
     width: 60px;
     height: 60px;
-    background-image: url('sprites/dino-rainbow.gif');
+    background-image: url('sprites/dino-basic.gif');
     background-size: 100%;
     position: absolute;
     bottom: 0;
@@ -22,7 +40,16 @@ body {
     width: 60px;
     height: 60px;
     bottom: 0;
-    background-image: url(https://github.com/celso-henrique/dio-dino-game/blob/master/cactus.png?raw=true);
+    background-image: url(sprites/cactus.png);
+   }
+
+#background {
+    margin-top: 260px;
+    background-image: url(sprites/background.png);
+    background-repeat: repeat-x;
+    animation: slideright 1500s infinite linear;
+    width: 100%;
+    height: 200px;
 }
 
 @keyframes slideright {
@@ -34,33 +61,15 @@ body {
     }
 }
 
-#background {
-    position: absolute;
-    bottom: 0px;
-    background-image: url(https://raw.githubusercontent.com/celso-henrique/dio-dino-game/master/background.png);
-    background-repeat: repeat-x;
-    animation: slideright 600s infinite linear;
-    width: 100%;
-    height: 200px;
-}
-
 #gameOver {
-    display: none;
-    font-size: 32px;
-    margin-top: 25px;
+    font-size: 30px;
     text-align: center;
     cursor: default;
 }
 
 #reiniciar {
-    display: none;
     margin-top: 20px;
     margin-left: 17px;
-}
-
-
-.pontuacao {
-    font-size: 30px;
 }
 
 .menu {
@@ -74,11 +83,9 @@ body {
     border: solid black;
     border-radius: 5px;
     border-style: double;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    display: hidden;
 }
 
 .button {
@@ -103,10 +110,49 @@ p {
     margin-top: 5px;
 }
 
-#removeCactus {
-    width: 100%;
-    height: 150px;
-    background-color: #fafafa;;
+.menu-dino {
+    left: 50%;
+    top: 50%;
+    margin-left: -225px; 
+    margin-top: -160px;
     position: absolute;
-    bottom: 0px;
+    width: 370px; 
+    height: 300px;
+    border: solid black;
+    border-radius: 5px;
+    border-style: double;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.opcao-dino {
+    width: 70px;
+    height: 70px;
+    border: solid black;
+    border-style: double;
+    cursor:pointer;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.animation {
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0;
+}
+
+.atualizar {
+    height: 30px;
+}
+
+.atualizar :hover {
+    background-color: rgb(236, 235, 235);
+    height: 30px;
+}
+
+#p-gameOver {
+    margin-top: 0;
 }
