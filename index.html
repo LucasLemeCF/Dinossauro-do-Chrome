@@ -24,9 +24,9 @@
                 <div class="button" id="reiniciar" onclick="reiniciar()" style="display: none;" ><p>Voltar ao menu</p></div>
 
                 <!-- Sobre -->
-                <div class="button" id="linkedIn" onclick="javascript:location.href='https://www.linkedin.com/in/lucas-leme/'" style="display: none;"><p>linkedIn</p></div>
-                <div class="button" id="gitHub" onclick="javascript:location.href='https://github.com/LucasLemeCF/Dinossauro-do-Chrome'" style="display: none;"><p>gitHub</p></div>
-                <div class="button voltar" onclick="voltar()" style="display: none;"><p>Voltar</p></div>
+                <div class="button" id="linkedIn" onclick="window.open('https://www.linkedin.com/in/lucas-leme/', '_blank');" style="display: none;"><p>linkedIn</p></div>
+                <div class="button" id="gitHub" onclick="window.open('https://github.com/LucasLemeCF/Dinossauro-do-Chrome', '_blank');" style="display: none;"><p>gitHub</p></div>
+                <div class="button voltar" onclick="mostrarMenu()" style="display: none;"><p>Voltar</p></div>
 
                 <!-- Game Over -->
                 <div id="gameOver" style="display: none;"></div>
@@ -34,8 +34,7 @@
                 <div class="button atualizar" onclick="atualizar()" style="display: none;"><p id="p-gameOver">Jogar Novamente</p></div>
             </div>
 
-            <div class="menu-dino" style="display: none;">
-                
+            <div class="menu-dino" style="display: none;">  
                 <div class="opcao-dino" id="basic" style="background-image: url('sprites/dino-basic.gif');" onclick="escolherDino(this, id)" ></div>
                 <div class="opcao-dino" id="aniversary" style="background-image: url('sprites/dino-aniversary.gif');" onclick="escolherDino(this, id)"></div>
                 <div class="opcao-dino" id="red" style="background-image: url('sprites/dino-red.gif');" onclick="escolherDino(this, id)" ></div>
@@ -47,7 +46,7 @@
                 <div class="opcao-dino" id="blue" style="background-image: url('sprites/dino-blue.gif');" onclick="escolherDino(this, id)" ></div>     
                 
                 <div class="opcao-dino" id="rainbow" style="background-image: url('sprites/dino-rainbow.gif');" onclick="escolherDino(this, id)" ></div>
-                <div class="button voltar" onclick="voltar()" style="display: block;"><p>Voltar</p></div>
+                <div class="button voltar" id="voltar-dino" onclick="mostrarMenu()" style="display: block;"><p>Voltar</p></div>
             </div>
 
             <div id="removeCactus" style="display: none;"></div>

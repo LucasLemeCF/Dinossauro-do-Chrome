@@ -107,6 +107,7 @@ function atualizar() {
 function mostrarDinos() {
     document.querySelector(".menu").style.display = 'none';  
     document.querySelector(".menu-dino").style.display = 'flex';  
+    document.querySelector("#voltar-dino").style.display = 'block';  
 }
 
 function escolherDino(dino, id) {
@@ -115,23 +116,24 @@ function escolherDino(dino, id) {
 }
 
 function mostrarSobre() {
-    document.querySelector("#jogar").style.display = 'none';  
-    document.querySelector("#mostrarDinos").style.display = 'none';  
-    document.querySelector("#sobre").style.display = 'none';  
+    removeItens();
     document.querySelector("#linkedIn").style.display = 'block';  
     document.querySelector("#gitHub").style.display = 'block';  
     document.querySelector(".voltar").style.display = 'block';  
 }
 
-function voltar() {
+function mostrarMenu() {
+    removeItens();
     document.querySelector(".menu").style.display = 'flex';  
-    document.querySelector(".menu-dino").style.display = 'none';  
     document.querySelector("#jogar").style.display = 'block';  
     document.querySelector("#mostrarDinos").style.display = 'block';  
     document.querySelector("#sobre").style.display = 'block';  
-    document.querySelector("#linkedIn").style.display = 'none';  
-    document.querySelector("#gitHub").style.display = 'none';  
-    document.querySelector(".voltar").style.display = 'none';  
+}
+
+function removeItens() {
+    const buttons = document.querySelectorAll(".button");
+    buttons.forEach(element => { element.style.display = 'none'; });
+    document.querySelector(".menu-dino").style.display = 'none';  
 }
 
 document.querySelector(".pontuacao").innerHTML = "Pontuação: 0";
