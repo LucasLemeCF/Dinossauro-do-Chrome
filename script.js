@@ -2,6 +2,8 @@ var dino = document.querySelector('.dino');
 const background = document.querySelector('#background');
 let isJumping = false;
 let position = 0;
+const gravity = 2.5;
+let jumpForce = 25;
 stopGame = false;
 pontos = 0;
 
@@ -15,26 +17,21 @@ function handKeyUp(event) {
 
 function jump() {
     isJumping = true;
+    position = 0;
+    jumpForce = 25;
 
     let upInterval = setInterval(() => {
-        if (position >= 150) {
-            clearInterval(upInterval);
+       
+        position += jumpForce;
+        dino.style.bottom = position + 'px';
 
-            //Descendo
-            let downInterval = setInterval(() => {
-                if (position <= 0) {
-                    clearInterval(downInterval);
-                    isJumping = false;
-                } else {
-                    position -= 13;
-                    dino.style.bottom = position + 'px';
-                } 
-            }, 20);
-        } else {
-            //Subindo
-            position += 13;
-            dino.style.bottom = position + 'px';
+        jumpForce -= gravity;
+
+        if (position <= 0) {
+            isJumping = false;
+            clearInterval(upInterval);
         }
+
     }, 20);
 }
 
